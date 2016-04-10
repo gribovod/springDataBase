@@ -1,0 +1,5 @@
+com\itstep\KanbanWithDbApplication.class
+org\itstep\Kanban.class
+org\itstep\State.class
+org\itstep\User.class
+org\itstep\KanbanController.class

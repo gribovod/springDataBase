@@ -1,4 +1,4 @@
-package itstep;
+package com.itstep;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,9 +7,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = TesthibernateApplication.class)
+@SpringApplicationConfiguration(classes = KanbanWithDbApplication.class)
 @WebAppConfiguration
-public class TesthibernateApplicationTests {
+public class KanbanWithDbApplicationTests {
 
 	@Test
 	public void contextLoads() {
