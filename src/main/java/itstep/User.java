@@ -1,64 +1,47 @@
-package itstep;
+package org.itstep;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
-/**
- *
- * @author student
+/*
+ * @author Vadim
  */
-@Entity
-@Table (name = "users")
 public class User {
-    @NotNull
-    private String name;
 
+    private long id;
+    private String name;
+    private ArrayList<Integer> tasks;
+
+    public void addTask(int taskId) {
+        this.tasks.add(taskId);
+    }
+    public ArrayList<Integer> getTasks(){
+        return tasks;
+    }
+    
+    public User(String name){
+        this.name = name;
+    }
+    
+    public User(long id, String name){
+        this.id = id;
+        this.name = name;
+        tasks = new ArrayList<>();
+    }
+    
+    
+    public void setId(long id) {
+        this.id = id;
+    }
+    public long getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Long id;
-    
-    @NotNull
-    private String email;
-
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
-
-    public User(Long id) {
-        this.id = id;
-    }
-
-    public User() {
-    }
-    
-            
 }
+
+
