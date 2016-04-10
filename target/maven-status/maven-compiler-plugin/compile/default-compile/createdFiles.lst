@@ -1,5 +1,8 @@
-com\itstep\KanbanWithDbApplication.class
-org\itstep\Kanban.class
-org\itstep\State.class
-org\itstep\User.class
-org\itstep\KanbanController.class
+itstep\UserController.class
+itstep\KanbanController.class
+itstep\UserDao.class
+itstep\TesthibernateApplication.class
+itstep\User.class
+itstep\Kanban.class
+itstep\UserModel.class
+itstep\State.class

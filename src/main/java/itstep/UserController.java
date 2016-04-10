@@ -23,7 +23,7 @@ public class UserController {
     @ResponseBody
     public String create(String email, String name){
         String id;
-        User user = new User(name, email);
+        UserModel user = new UserModel(name, email);
         userDao.save(user);
         id = String.valueOf(user.getId());
         return id;

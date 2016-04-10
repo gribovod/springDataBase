@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table (name = "users")
-public class User {
+public class UserModel {
     @NotNull
     private String name;
 
@@ -48,16 +48,16 @@ public class User {
     @NotNull
     private String email;
 
-    public User(String name, String email) {
+    public UserModel(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public User(Long id) {
+    public UserModel(Long id) {
         this.id = id;
     }
 
-    public User() {
+    public UserModel() {
     }
     
             

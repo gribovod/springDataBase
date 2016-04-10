@@ -1,4 +1,4 @@
-package org.itstep;
+package itstep;
 
 import java.util.ArrayList;
 
