@@ -1,7 +1,8 @@
-package org.itstep;
+package itstep;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import org.itstep.User;
 
 enum State { PENDING, DONE, UNDONE }
 
