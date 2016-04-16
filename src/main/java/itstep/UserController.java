@@ -18,19 +18,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
     @Autowired
     private UserDao userDao;
-    
-    @RequestMapping("/create")
+
+    // регистрация пользователя.
+    @RequestMapping("/registerUser")
     @ResponseBody
-    public String create(String email, String name){
+    public UserModel create(String name){
         String id;
-        UserModel user = new UserModel(name, email);
-        userDao.save(user);
-        id = String.valueOf(user.getId());
-        return id;
+	try{
+	    UserModel user = new UserModel(name);
+	    userDao.save(user);
+	    id = String.valueOf(user.getId());
+	}
+	catch(Exception ex){
+	    return null;
+	}
+        return userDao.findByName(name);
+
     }
+
+    // если пользователя нету возвращаем null
     @RequestMapping("/user")
     @ResponseBody
-    public String findUserNameByEmail(String email){
-        return userDao.findByEmail(email).getName();
+    public UserModel issetNewUser(String name){
+	try{ if( userDao.findByName(name).getName() != null ){ return this.userDao.findByName(name);} }
+	catch(Exception e){ return null; }
+	return null;
     }
+
 }

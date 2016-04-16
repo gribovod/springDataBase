@@ -8,6 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 @Transactional
 public interface UserDao extends CrudRepository<UserModel, Long>{
-    public UserModel findByEmail(String email);
-    
+    public UserModel findByName(String name);
 }
